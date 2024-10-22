@@ -103,3 +103,13 @@ Grapic 后端采用以下技术构建：
     ls
 }
 ```
+
+# 如何保持运行?
+
+建议使用 screen 命令新建会话窗口保持程序的运行，可以用以下命令新建一个窗口：
+
+```bash
+screen -dmS grapic /opt/grapic/data/grapic
+```
+
+然后运行程序，完成后按Ctrl+A+D退出窗口，当然你也可以使用nohup命令将程序放到后台运行。
