@@ -75,3 +75,31 @@ Grapic 后端采用以下技术构建：
 ```
 
 如果需要更改配置，可以手动修改后重启二进制程序，或者删除config.json文件，并且重新运行程序，则会要求重新交互式配置。
+
+# 运行程序
+
+脚本简单写了一下，大概长这样，对于linux环境，可以直接运行，另外，如果配置要重新生成的话，可以删除config.json文件，然后运行程序，会要求重新配置，或者手动编辑config.json文件。
+
+```bash
+{
+    cd /opt/
+    git clone git@github.com:hyhacct/grapic.git
+
+    # 编译
+    cd /opt/grapic/go-admin
+    go build -o grapic cmd/main.go
+
+    cd /opt/grapic/vite-project
+    yarn
+    yarn build
+
+    mkdir -p /opt/grapic/data/default
+    mv /opt/grapic/go-admin/grapic /opt/grapic/data/
+    mv /opt/grapic/vite-project/dist /opt/grapic/data/default/
+
+    # 启动
+    cd /opt/grapic/data/
+    chmod +x grapic
+    ls
+}
+```
