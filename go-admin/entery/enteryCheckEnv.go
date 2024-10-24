@@ -29,9 +29,12 @@ func EnteryCheckEnv() {
 
 // 获取用户输入
 func getUserInput() {
+	var openssl string
 
 	// 第一步，先询问用户是否需要启用SSL
-	survey.AskOne(&survey.Select{Message: "是否需要启用SSL?", Options: []string{"true", "false"}, Default: "false"}, &JsonEntery.Https.Enabled)
+	survey.AskOne(&survey.Select{Message: "是否需要启用SSL?", Options: []string{"Yes", "No"}, Default: "No"}, &openssl)
+
+	JsonEntery.Https.Enabled = openssl == "Yes"
 
 	// 如果用户启用了SSL，则只需要填写SSL相关的参数即可
 	if JsonEntery.Https.Enabled {

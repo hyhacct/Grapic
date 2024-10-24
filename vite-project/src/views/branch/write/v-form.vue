@@ -320,7 +320,7 @@ const submitForm = () => {
             .finally(() => {
                 store.showDialogLoading = false;
             });
-    }, 2000);
+    }, 1000);
 
 }
 

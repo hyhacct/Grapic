@@ -163,7 +163,7 @@ const getComments = () => {
             .finally(() => {
                 store.loading_comments = false;
             });
-    }, 2000);
+    }, 500);
 }
 
 

@@ -154,7 +154,7 @@ const submitComment = () => {
             .finally(() => {
                 loading.value = false;
             });
-    }, 2000);
+    }, 500);
 
 }
 
